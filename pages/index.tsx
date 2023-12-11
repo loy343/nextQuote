@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 //components
-import { BackgroundImage1, BackgroundImage2, Footercon, GradientBackgroundCon } from '@/components/QuoteGenerator/QuoteGeneratorElements'
+import { BackgroundImage1, BackgroundImage2, FooterLink, Footercon, GenerateQuoteButton, GenerateQuoteButtonText, GradientBackgroundCon, QuoteGeneratorCon, QuoteGeneratorInnerCon, QuoteGeneratorSubTitle, QuoteGeneratorTitle } from '@/components/QuoteGenerator/QuoteGeneratorElements'
 
 
 //assets
@@ -13,7 +13,7 @@ import idea2 from '@/assets/lightbulb-idea-vector-1899962.jpg'
  
 export default function Home() {
   const [numberOfQuotes, setNumberOfQuotes] = useState<Number | null>(0)
-  
+
   return (
     <>
       {/* header */}
@@ -23,6 +23,29 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* quote modal popUP */}
+      {/* <QuoteGeneratorModal/> */}
+
+      {/* quote Generator */}
+      <QuoteGeneratorCon>
+        <QuoteGeneratorInnerCon>
+          <QuoteGeneratorTitle>
+            Daily Inspiration Generator
+          </QuoteGeneratorTitle>
+
+          <QuoteGeneratorSubTitle>
+            Looking for a splash of inspiration? Generate a quote card with a random inspirational quote provided by 
+            <FooterLink href="https:/zenquotes.io/" target="_blank" rel="noopener noreferrer">ZenQuotes API</FooterLink>
+          </QuoteGeneratorSubTitle>
+
+          <GenerateQuoteButton>
+            <GenerateQuoteButtonText onClick={null}>
+              Make a Quote
+            </GenerateQuoteButtonText>
+          </GenerateQuoteButton>
+        </QuoteGeneratorInnerCon>
+      </QuoteGeneratorCon>
       
       {/* Background */}
       <GradientBackgroundCon>
@@ -50,3 +73,4 @@ export default function Home() {
     </>
   )
 }
+//1:50 backend svg
